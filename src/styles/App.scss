@@ -1,0 +1,209 @@
+@import 'styles/_colors.scss';
+
+* {
+  box-sizing: border-box;
+}
+li {
+  list-style-type: none;
+}
+
+#root {
+  display: flex;
+}
+
+.App-logo {
+  // animation: App-logo-spin infinite 20s linear;
+  display: block;
+  height: 100px;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(200rem / 16);
+  &-link {
+    padding: 0.5rem 2rem;
+    border: 1px dotted #d9d9d9;
+    color: #333333;
+    text-decoration: none;
+    background-color: #eeeeee;
+  }
+}
+.Locales-select {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.App-title {
+  font-size: 1.5em;
+}
+
+.View-content {
+  flex: 1;
+  p {
+    margin: 1rem;
+  }
+}
+
+/***Webtree***/
+.Webtree {
+  display: flex;
+  flex-direction: column;
+  form {
+    border: 1px dotted #d9d9d9;
+    background-color: #eeeeee;
+    padding: 0.5rem 2rem;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.Webtree-item {
+  position: relative;
+  border: 1px dotted #d9d9d9;
+  background-color: #eeeeee;
+  cursor: grab;
+  &--placeholder {
+    min-height: calc(50rem / 16);
+  }
+}
+.Webtree-link {
+  display: inline-flex;
+  padding: 0.5rem 2rem;
+  color: #333333;
+  text-decoration: none;
+}
+
+/***ListItem****/
+.Droppable-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.Droppable-item {
+  min-width: 100%;
+  position: relative;
+  border: 1px dotted #d9d9d9;
+  background-color: #eeeeee;
+  cursor: grab;
+  &--placeholder {
+    min-height: calc(50rem / 16);
+  }
+
+  // &:hover {
+  //   a {
+  //     pointer-events: none;
+  //   }
+  // }
+}
+
+.Editable-item {
+  position: relative;
+  display: flex;
+  border-bottom: 1px dotted #d9d9d9;
+  background-color: #eeeeee;
+  cursor: text;
+  &--disable {
+    pointer-events: none;
+  }
+  &-content {
+    flex: 1;
+    padding: 1rem;
+  }
+  &-toolBar {
+    margin: 0.25rem;
+    cursor: pointer;
+    pointer-events: initial;
+  }
+  &-index {
+    margin: 0.25rem;
+    font-size: 0.8rem;
+  }
+  span {
+    display: inline-flex;
+    padding: 0.25rem;
+  }
+}
+
+/****SignUp*********/
+.sign-up {
+  min-height: 100vh;
+  background-color: #eeeeee;
+}
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20% 1rem;
+  max-width: calc(300rem / 16);
+  input {
+    padding: 0.5rem;
+    margin: 0.25rem 0;
+    border: 1px solid $lightGrey;
+  }
+  input[type='submit'] {
+    background-color: $lightGrey;
+  }
+}
+
+/****Animation *****/
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes textVariation {
+  0% {
+    letter-spacing: 0px;
+    font-size: calc(6rem / 16);
+  }
+  30% {
+    letter-spacing: 5px;
+  }
+  100% {
+    letter-spacing: 0px;
+    font-size: calc(12rem / 16);
+  }
+}
+
+/*transition-groupµ*/
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 600ms linear;
+}
+
+.pageSlider-enter {
+  transform: translate3d(100%, 0, 0);
+}
+
+.pageSlider-enter.pageSlider-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: all 600ms;
+}
+.pageSlider-exit {
+  transform: translate3d(0, 0, 0);
+}
+
+.pageSlider-exit.pageSlider-exit-active {
+  transform: translate3d(-100%, 0, 0);
+  transition: all 600ms;
+}
